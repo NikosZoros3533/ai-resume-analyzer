@@ -1,20 +1,23 @@
-import { useCallback, useState } from "react";
+import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { formatSize } from "~/lib/utils";
+
 
 interface FileUploaderProps {
   onFileSelect?: (file: File | null) => void;
 }
 
-export default function FileUploader({ onFileSelect }: FileUploaderProps) {
+const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       const file = acceptedFiles[0] || null;
+
       onFileSelect?.(file);
     },
     [onFileSelect]
   );
-  const maxFileSize = 20 * 1024 * 1024; //20MB in bytes
+
+  const maxFileSize = 20 * 1024 * 1024; // 20MB in bytes
 
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({
@@ -30,6 +33,7 @@ export default function FileUploader({ onFileSelect }: FileUploaderProps) {
     <div className="w-full gradient-border">
       <div {...getRootProps()}>
         <input {...getInputProps()} />
+
         <div className="space-y-4 cursor-pointer">
           {file ? (
             <div
@@ -74,4 +78,5 @@ export default function FileUploader({ onFileSelect }: FileUploaderProps) {
       </div>
     </div>
   );
-}
+};
+export default FileUploader;

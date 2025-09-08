@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import ScoreCircle from "./ScoreCircle";
 
 export default function ResumeCard({
-  resume: { id, companyName, jobTitle, feedback, imagePath },
+  resume: { id, companyName, jobTitle, feedback },
 }: {
   resume: Resume;
 }) {
@@ -22,11 +22,12 @@ export default function ResumeCard({
       </div>
       <div className="gradient-border animate-in fade-in duration-1000">
         <div className="w-full h-full ">
-          <img
+          {/* <img
             src={imagePath}
             alt="resume"
             className="w-full h-[350px] max-sm:h-[200px] object-cover object-top"
-          />
+          /> */}
+          <h1>{id}</h1>
         </div>
       </div>
     </Link>
