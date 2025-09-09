@@ -350,7 +350,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
           ],
         },
       ],
-      { model: "deepseek-reasoner" }
+      { model: "deepseek-chat" }
     ) as Promise<AIResponse | undefined>;
   };
 
