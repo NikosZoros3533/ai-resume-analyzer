@@ -95,7 +95,7 @@ export default function Resume() {
             <img
               src="/images/resume-scan-2.gif"
               alt="scanning"
-              className="w-full"
+              className="w-50 h-50"
             />
           )}
         </section>

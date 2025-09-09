@@ -14,7 +14,7 @@ export default function ResumeCard({
       className="resume-card animate-in fade-in duration-1000"
     >
       <div className="resume-card-header">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 p-4">
           {companyName && (
             <h2 className="!text-black font-bold break-words">{companyName}</h2>
           )}
